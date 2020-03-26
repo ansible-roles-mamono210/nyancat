@@ -1,9 +1,11 @@
-[![](https://github.com/ansible-roles-matsumura/nyancat/workflows/Ansible%20Playbook/badge.svg)](https://github.com/ansible-roles-matsumura/nyancat/actions)
+[![](https://github.com/ansible-roles-matsumura/nyancat/workflows/Build/badge.svg)](https://github.com/ansible-roles-matsumura/nyancat/actions?query=workflow%3ABuild)
+[![](https://github.com/ansible-roles-matsumura/nyancat/workflows/Lint/badge.svg)](https://github.com/ansible-roles-matsumura/nyancat/actions?query=workflow%3ALint)
 
-Role Name
+
+Role Description 
 =========
 
-Installs Nyancat for CentOS7.
+Installs [Nyancat](https://github.com/klange/nyancat) for CentOS7.
 
 Requirements
 ------------

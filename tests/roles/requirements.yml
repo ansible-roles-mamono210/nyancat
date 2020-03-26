@@ -1,4 +1,3 @@
 ---
 - src: https://github.com/ansible-roles-matsumura/nyancat.git 
-  version: 'test'
   name: matsumura.nyancat

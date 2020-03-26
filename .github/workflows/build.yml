@@ -1,5 +1,5 @@
 ---
-name: Ansible Playbook
+name: Build 
 on: push
 
 jobs:
@@ -9,18 +9,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Ansible lint
-        uses: ansible/ansible-lint-action@master
-        with:
-          targets: |
-            tasks/main.yml
-            tests/test.yml
-
       - name: Build CentOS7 image sudo installed
         run: docker build tests/. -t centos7sudo
 
       - name: Docker run CentOS7 image sudo installed
-        run: sudo docker run -d -t --name=mycontainer centos7sudo
+        run: docker run -d -t --name=mycontainer centos7sudo
 
       - name: Install Ansible galaxy roles
         run: ansible-galaxy install -r tests/roles/requirements.yml -p tests/roles
@@ -33,8 +26,17 @@ jobs:
 
       - name: Check if nyancat command works
         run: |
-          docker exec --tty mycontainer env TERM=xterm timeout 2 nyancat
+          docker exec --tty mycontainer env TERM=xterm timeout 2 nyancat > results.txt 2>&1
         continue-on-error: true
+
+      - name: Show command results
+        run: |
+          cat results.txt
+
+      - name: Check if the command worked
+        run: |
+          words=$(cat results.txt | wc -w)
+          if [ $words -lt 100 ]; then exit 1; fi
 
       - name: Show Ansible version
         run: ansible --version
