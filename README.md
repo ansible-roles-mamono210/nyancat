@@ -1,8 +1,9 @@
 [![](https://github.com/ansible-roles-matsumura/nyancat/workflows/Build/badge.svg)](https://github.com/ansible-roles-matsumura/nyancat/actions?query=workflow%3ABuild)
 [![](https://github.com/ansible-roles-matsumura/nyancat/workflows/Lint/badge.svg)](https://github.com/ansible-roles-matsumura/nyancat/actions?query=workflow%3ALint)
+[![](https://github.com/ansible-roles-matsumura/nyancat/workflows/Trailing%20whitespace/badge.svg)](https://github.com/ansible-roles-matsumura/nyancat/actions?query=workflow%3A%22Trailing+whitespace%22)
 
 
-Role Description 
+Role Description
 =========
 
 Installs [Nyancat](https://github.com/klange/nyancat) for CentOS7.
@@ -33,7 +34,7 @@ Example Playbook
 - hosts: all
   become: true
   roles:
-    - nyancat 
+    - nyancat
 ```
 
 License
