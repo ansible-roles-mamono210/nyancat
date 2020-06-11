@@ -1,0 +1,22 @@
+---
+- name: Verify
+  hosts: all
+
+  tasks:
+    - name: Check whether Nyancat is installed
+      command: nyancat -h
+      register: NYANCAT_INSTALLED
+      changed_when: false
+
+    - name: Check OS version
+      command: cat /etc/redhat-release
+      register: OS_VERSION
+      changed_when: false
+
+    - name: Show Nyancat help
+      debug:
+        var: NYANCAT_INSTALLED
+
+    - name: Show OS version
+      debug:
+        var: OS_VERSION

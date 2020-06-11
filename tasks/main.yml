@@ -1,12 +1,12 @@
 ---
-- name: Check if Nyancat is installed
+- name: Check whether Nyancat is installed
   command: nyancat -h
   register: NYANCAT_INSTALLED
   ignore_errors: yes
   changed_when: false
 
-- name: Install Development Tools with yum
-  yum:
+- name: Install Development Tools
+  package:
     name: '@Development Tools'
     state: present
   when: NYANCAT_INSTALLED is failed
