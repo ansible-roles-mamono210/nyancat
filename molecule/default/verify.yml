@@ -13,7 +13,7 @@
       register: OS_VERSION
       changed_when: false
 
-    - name: Show Nyancat help
+    - name: Make sure Nyancat is installed
       debug:
         var: NYANCAT_INSTALLED
 
