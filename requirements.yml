@@ -1,7 +1,0 @@
----
-roles:
-  - name: nyancat
-    src: https://github.com/ansible-roles-matsumura/nyancat.git
-
-collections:
-  - name: community.general
