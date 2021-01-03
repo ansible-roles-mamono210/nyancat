@@ -1,36 +1,36 @@
 ---
 - name: Check whether Nyancat is installed
-  command: nyancat -h
+  ansible.builtin.command: nyancat -h
   register: NYANCAT_INSTALLED
   ignore_errors: yes
   changed_when: false
 
 - name: Install Development Tools
-  package:
+  ansible.builtin.package:
     name: '@Development Tools'
     state: present
   when: NYANCAT_INSTALLED is failed
 
 - name: Retrieve nyancat install files
-  git:
+  ansible.builtin.git:
     repo: '{{ nyancat_git_repo }}'
     dest: '{{ work_dir }}'
   when: NYANCAT_INSTALLED is failed
 
 - name: Build nyancat
-  make:
+  community.general.make:
     chdir: "{{ work_dir }}/src"
   when: NYANCAT_INSTALLED is failed
 
 - name: Add nyancat command on system
-  copy:
+  ansible.builtin.copy:
     src: "{{ work_dir }}/src/nyancat"
     dest: "/usr/local/bin/"
     remote_src: yes
   when: NYANCAT_INSTALLED is failed
 
 - name: Assign execute permission to nyancat command
-  file:
+  ansible.builtin.file:
     path: /usr/local/bin/nyancat
     mode: 0755
   when: NYANCAT_INSTALLED is failed
