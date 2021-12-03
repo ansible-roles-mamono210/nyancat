@@ -29,6 +29,8 @@ rules:
   key-ordering: disable
   line-length:
     level: error
+    ignore: |
+      .github/workflows/build.yml
   new-line-at-end-of-file: enable
   new-lines: enable
   octal-values: disable
