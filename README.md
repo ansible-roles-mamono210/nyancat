@@ -4,7 +4,7 @@
 Role Description
 =========
 
-Installs [Nyancat](https://github.com/klange/nyancat) for CentOS7/CentOS8.
+Installs [Nyancat](https://github.com/klange/nyancat) for CentOS7/Stream8.
 
 Requirements
 ------------
