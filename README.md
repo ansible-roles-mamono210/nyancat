@@ -1,5 +1,4 @@
-[![](https://github.com/ansible-roles-matsumura/nyancat/workflows/build/badge.svg)](https://github.com/ansible-roles-matsumura/nyancat/actions?query=workflow%3Abuild)
-
+[![CircleCI](https://circleci.com/gh/ansible-roles-mamono210/nyancat/tree/main.svg?style=svg)](https://circleci.com/gh/ansible-roles-mamono210/nyancat/tree/main)
 
 Role Description
 =========
